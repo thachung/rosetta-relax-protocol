@@ -8,10 +8,14 @@ services:
     secrets:
       - source: inputfile
         target: /home/runtime/inputfile.pdb
+      - source: script
+        target: /home/runtime/relaxscript.sh
 
 secrets:
   inputfile:
     file: ./*.pdb
+  script:
+    file: ./relaxscript.sh
 
 volumes:
   drive:
