@@ -2,26 +2,7 @@
 ## Setup
 Current setup assumes an up-to-date docker-compose installed, and a prepared pdb file for relaxing.
 ## Usage
-Place the pdb in the same directory with the following docker-compose.yml file. Please change ```<inputfile>``` to your pdb filename.
-```
-version: "3.9"
-services:
-  relax:
-    image: thachung/rosetta-relax
-    command: bash relaxscript.sh
-    volumes:
-      - drive:/home/runtime
-    secrets:
-      - source: inputfile
-        target: /home/runtime/inputfile.pdb
-
-secrets:
-  inputfile:
-    file: ./<inputfile>.pdb
-
-volumes:
-  drive:
-```
+Download this git repository and place the pdb in the same directory. Please change ```<inputfile>``` in docker-compose.yml to your pdb filename.
 Start the protocol by:
 ```bash
 docker-compose up -d
