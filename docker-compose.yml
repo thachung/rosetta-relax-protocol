@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  relax:
+    image: thachung/rosetta-relax
+    command: bash relaxscript.sh
+    volumes:
+      - drive:/home/runtime
+    secrets:
+      - source: inputfile
+        target: /home/runtime/inputfile.pdb
+
+secrets:
+  inputfile:
+    file: ./*.pdb
+
+volumes:
+  drive:
