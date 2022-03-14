@@ -15,7 +15,7 @@ secrets:
   inputfile:
     file: ./*.pdb
   script:
-    file: ./relaxscript.sh
+    file: ./relaxscript-greedy.sh
 
 volumes:
   drive:
